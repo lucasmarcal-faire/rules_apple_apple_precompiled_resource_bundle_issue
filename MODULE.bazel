@@ -1,0 +1,6 @@
+bazel_dep(name = "rules_swift", version = "2.2.2", repo_name = "build_bazel_rules_swift")
+bazel_dep(name = "rules_apple", version = "3.10.0", repo_name = "build_bazel_rules_apple")
+git_override(module_name = "rules_apple", remote = "https://github.com/bazelbuild/rules_apple.git", commit = "145b1714fa40afad860d3e238f52a077a28a5b91")
+bazel_dep(name = "apple_support", version = "1.17.1", repo_name = "build_bazel_apple_support")
+non_module_deps = use_extension("@build_bazel_rules_swift//swift:extensions.bzl", "non_module_deps")
+bazel_dep(name = "rules_xcodeproj", version = "2.8.0")
